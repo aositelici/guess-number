@@ -1,23 +1,25 @@
 'use strict';
 
+var _ = require('lodash');
 var CompearNumber = function CompearNumber() {
   };
 
   CompearNumber.prototype.compearNumber = function(answer,input) {
 
     var same = 0,diff = 0;
-    for(var i =0; i < 4; i++) {
-      for(var x =0; x < 4; x++) {
-         if(answer.charAt(i) === input.charAt(x) && i===x ) {
-           same++;
-         }
 
-         if(answer.charAt(i) === input.charAt(x) && i!==x ) {
-           diff++;
-         }
+    answer = answer.split('');
+    input = input.split('');
+
+    answer.forEach(function (element,index) {
+      if (index === input.indexOf(element)) {
+        same++;
       }
-    }
+      if (input.indexOf(element) !== -1 && index !== input.indexOf(element)){
+        diff++;
+      }
+    }); 
+    
     return same.toString()+'A'+diff.toString()+'B';
-  };
-
+};
 module.exports = CompearNumber;

@@ -12,14 +12,13 @@ var CompearNumber = function CompearNumber() {
     input = input.split('');
 
     answer.forEach(function (element,index) {
-      if (index === input.indexOf(element)) {
-        same++;
-      }
-      if (input.indexOf(element) !== -1 && index !== input.indexOf(element)){
-        diff++;
-      }
+      
+      same += (index === input.indexOf(element)) ? 1 :0;
+       
+      diff += (input.indexOf(element) !== -1 && index !== input.indexOf(element)) ? 1:0;
+      
     }); 
     
-    return same.toString()+'A'+diff.toString()+'B';
+    return same+'A'+diff+'B';
 };
 module.exports = CompearNumber;

@@ -1,6 +1,6 @@
 'use strict';
 
-
+var _ = require('lodash');
 var  AnswerGenerator = require('../main/answer-generator');
 
 describe('answer-generator:', function (){
@@ -43,12 +43,12 @@ describe('answer-generator:', function (){
   
     it("should be a random result", function() {
       var flag = 5;
-      spyOn(Math, 'random').and.callFake(function() {
+      spyOn(_, 'random').and.callFake(function() {
         flag--;
         if(flag === 0) {
-          return 0.1;
+          return 1;
         }
-        return flag*0.1;
+        return flag;
     });
       expect(answergenerator.getGenerator()).toBe('4321');
 

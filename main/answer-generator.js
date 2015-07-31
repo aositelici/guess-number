@@ -9,17 +9,16 @@ var AnswerGenerator = function () {
 
 AnswerGenerator.prototype.getGenerator = function(){
 
-  var result = [];
+  var result = '';
   while(result.length < 4) {
 
     var randomNumber = this.Math.random(0,9);
 
     if(result.indexOf(randomNumber) === -1) {
-      result.push(randomNumber );
+      result += randomNumber ;
     }
 
   }
-  return result.join('');
+  return result;
 }
-
 module.exports = AnswerGenerator;

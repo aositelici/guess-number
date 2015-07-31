@@ -42,15 +42,12 @@ describe('answer-generator:', function (){
     });
   
     it("should be a random result", function() {
-      var flag = 5;
+      var count = 0;
       spyOn(_, 'random').and.callFake(function() {
-        flag--;
-        if(flag === 0) {
-          return 1;
-        }
-        return flag;
+        var numbers = [1,1,2,3,4];
+        return numbers[count++];
     });
-      expect(answergenerator.getGenerator()).toBe('4321');
+      expect(answergenerator.getGenerator()).toBe('1234');
 
     });
   });

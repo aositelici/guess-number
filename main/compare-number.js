@@ -1,10 +1,10 @@
 'use strict';
 
 var _ = require('lodash');
-var CompearNumber = function CompearNumber() {
+var CompareNumber = function CompearNumber() {
   };
 
-  CompearNumber.prototype.compearNumber = function(answer,input) {
+  CompareNumber.prototype.compareNumber = function(answer,input) {
 
     var same = 0,diff = 0;
 
@@ -21,4 +21,4 @@ var CompearNumber = function CompearNumber() {
     
     return same+'A'+diff+'B';
 };
-module.exports = CompearNumber;
+module.exports = CompareNumber;
